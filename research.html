@@ -18,7 +18,7 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="research.html" class="active">Research</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
+        <!-- <li><a href="blog/index.html">Blog</a></li> (hidden for now) -->
         <li><a href="cv.html">CV</a></li>
       </ul>
     </div>
@@ -34,9 +34,8 @@
       <section class="section">
         <h2 class="section-heading">Research</h2>
         <div class="research-interests">
-          <!-- EDIT: replace with your actual research description -->
           <p>
-            To add
+            I develop statistical methods for gravitational-wave astronomy as part of the LIGO&ndash;Virgo&ndash;KAGRA collaboration. During my PhD I have built tools for analysing gravitational-wave data and used them to tackle fundamental questions, such as &lsquo;How do merging binary systems form?&rsquo; and &lsquo;Are gravitational-wave signals truly described by general relativity?&rsquo; Though I focus primarily on gravitational waves, I am broadly interested in how we use statistical methods to answer questions in astrophysics.
           </p>
         </div>
       </section>
@@ -66,25 +65,88 @@
           </div>
           -->
 
-          <!-- EDIT: replace with your first paper -->
+          <h3 class="pub-subheading">First-author papers</h3>
+
+          <!-- First-author papers (newest first) -->
           <div class="pub-item">
-            <div class="pub-title">Paper title placeholder</div>
-            <div class="pub-meta"><strong>Lachlan Passenger</strong>, Co-author Name. <em>Journal / Conference Name</em>, 2025.</div>
+            <div class="pub-title">Is GW231123 a hierarchical merger?</div>
+            <div class="pub-meta"><strong>Lachlan Passenger</strong>, Sharan Banagiri, Eric Thrane, Paul D. Lasky, Angela Borchers, Maya Fishbach, Claire S. Ye. <em>The Astrophysical Journal</em>, 999, 236, 2026.</div>
+            <p class="pub-desc">We tested whether the black-hole merger GW231123 can be explained by a hierarchical merger model, in which the black holes are themselves the remnants of earlier mergers, using a method developed in earlier work (see below). We found that such exotic formation channels could explain its high spins, but the conclusion depends on which model is used to calculate these spins.</p>
             <div class="pub-links">
-              <a href="#" target="_blank" rel="noopener">PDF</a>
-              <a href="#" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://doi.org/10.3847/1538-4357/ae4358" target="_blank" rel="noopener">DOI</a>
             </div>
           </div>
+
+          <div class="pub-item">
+            <div class="pub-title">A Gaussian process framework for testing general relativity with gravitational waves</div>
+            <div class="pub-meta"><strong>Lachlan Passenger</strong>, Shun Yin Cheung, Nir Guttman, Nikhil Kannachel, Paul D. Lasky, Eric Thrane. <em>The Astrophysical Journal</em>, 994, 202, 2025.</div>
+            <p class="pub-desc">We developed a flexible framework, built on Gaussian process regression, for testing general relativity with gravitational waves. Rather than testing for one deviation at a time, it allows for many possible deviations at once. We found consistency with general relativity and set upper limits on possible deviations. The framework also led to a companion paper by Shun Yin Cheung searching for non-standard gravitational-wave polarisations (see below).</p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.3847/1538-4357/ae13b0" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Are all models wrong? Falsifying binary formation models in gravitational-wave astronomy</div>
+            <div class="pub-meta"><strong>Lachlan Passenger</strong>, Eric Thrane, Paul D. Lasky, Ethan Payne, Simon Stevenson, Ben Farr. <em>Monthly Notices of the Royal Astronomical Society</em>, 535(3), 2837&ndash;2843, 2024.</div>
+            <p class="pub-desc">We developed a statistic that can be used to determine whether an exceptional gravitational-wave event is consistent with a given population model, which makes it possible to falsify binary formation models. We demonstrated the method on the binary black hole merger GW190521, finding its unusually high total mass could be explained as due to a hierarchical merger in an AGN disk or globular cluster.</p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1093/mnras/stae2521" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+
+          <h3 class="pub-subheading">Co-authored papers</h3>
+
+          <!-- Co-authored papers (newest first) -->
+          <div class="pub-item">
+            <div class="pub-title">The Sun's chemical peculiarity: disentangling Galactic chemical evolution and planetary engulfment in solar twins</div>
+            <div class="pub-meta">Mia Babatsikos, Fan Liu, Amanda Karakas, Ilya Mandel, <strong>Lachlan Passenger</strong>, Megan Bedell, Sharon Wang, Zimo Cheng. Accepted for publication in <em>The Astrophysical Journal</em>.</div>
+            <p class="pub-desc">This paper, led by Mia Babatsikos, finds that the Sun's chemical peculiarity relative to solar twins is largely driven by Galactic chemical evolution. It also identifies a few candidates with chemical signatures consistent with planetary engulfment. I helped develop the Bayesian method used and advised on the analysis.</p>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2607.01699" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">A search for extra polarizations using a Gaussian process in Gravitational-wave Transient Catalog 3</div>
+            <div class="pub-meta">Shun Yin Cheung, <strong>Lachlan Passenger</strong>, Paul D. Lasky, Eric Thrane. <em>The Astrophysical Journal</em>, 1001, 130, 2026.</div>
+            <p class="pub-desc">Led by Shun Yin Cheung, this is a companion paper to &lsquo;A Gaussian process framework for testing general relativity with gravitational waves&rsquo; (see above). The framework is extended to allow for extra gravitational-wave strain polarisations beyond those allowed by general relativity. The analysis finds consistency with general relativity and sets upper limits on the gravitational-wave strain due to extra polarisations. I contributed to the development of the method, and some of the code.</p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.3847/1538-4357/ae5493" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Possible causes of false general relativity violations in gravitational wave observations</div>
+            <div class="pub-meta">Anuradha Gupta, &hellip;, <strong>Lachlan Passenger</strong>, &hellip;, B. S. Sathyaprakash (43 authors). <em>SciPost Physics Community Reports</em>, 5, 2025.</div>
+            <p class="pub-desc">This community report, led by Anuradha Gupta, compiles the potential causes of spurious deviations from general relativity and estimates their effect on tests of general relativity in future gravitational-wave detectors. These causes include waveform systematics, unmodelled physics (e.g. eccentricity, precession), detector noise and calibration. I contributed to the section on environmental effects, where the environment of a binary merger can leave an imprint on the measured gravitational-wave signal that mimics a deviation from general relativity.</p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.21468/SciPostPhysCommRep.5" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+
+          <h3 class="pub-subheading">Collaboration papers</h3>
+
+          <!-- Collaboration papers (newest first) -->
+          <div class="pub-item">
+            <div class="pub-title">GWTC-5.0: Population properties of merging compact binaries</div>
+            <div class="pub-meta">The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration. <em>arXiv:2605.27226</em>, 2026.</div>
+            <p class="pub-desc">I was an analyst on this paper, contributing the analysis for three population models: the &lsquo;default&rsquo; binary black hole population model, a Madau&ndash;Dickinson extension to this model (how the black hole merger rate evolves over time), and a model that allows for three subpopulations in the black hole mass and spin distribution.</p>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2605.27226" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+
+          <!-- EDIT: add collaboration papers here (newest first), copying the .pub-item template above -->
 
         </div>
       </section>
 
-      <!-- Working papers / preprints (remove section if not needed) -->
+      <!-- Working papers section hidden for now. To restore, remove the comment markers.
       <section class="section mt-section">
         <h2 class="section-heading">Working Papers</h2>
         <div class="pub-list">
 
-          <!-- EDIT: replace with your working papers -->
           <div class="pub-item">
             <div class="pub-title">Working paper title placeholder</div>
             <div class="pub-meta"><strong>Lachlan Passenger</strong>. In preparation, 2025.</div>
@@ -95,6 +157,7 @@
 
         </div>
       </section>
+      -->
 
     </div>
   </main>

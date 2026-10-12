@@ -544,3 +544,21 @@ footer.site-footer p {
 .mt-section {
   margin-top: 3rem;
 }
+
+.pub-subheading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  margin: 1.5rem 0 0.25rem;
+}
+
+.pub-subheading:first-child {
+  margin-top: 0;
+}
+
+.pub-desc {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
