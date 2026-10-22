@@ -301,6 +301,14 @@ main {
   }
 }
 
+/* Stacked hero on mobile: keep the glow centred on the photo (140px) */
+@media (max-width: 560px) {
+  .hero::before {
+    top: 70px;
+    left: -80px;
+  }
+}
+
 /* --- Home: interests list --------------------------------- */
 .interests-list {
   list-style: none;
