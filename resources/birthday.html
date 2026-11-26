@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The birthday problem</title>
+<style>
+  :root { --fg:#1a1a1a; --muted:#666; --bg:#fafafa; --accent:#2457d6; --card:#fff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#eee; --muted:#aaa; --bg:#121212; --accent:#7aa2ff; --card:#1e1e1e; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+         background:var(--bg); color:var(--fg); line-height:1.5; }
+  main { max-width:28rem; margin:0 auto; padding:2rem 1.25rem 3rem; text-align:center; }
+  h1 { font-size:1.6rem; margin:0 0 1.5rem; }
+  p { color:var(--muted); margin:.5rem 0 1.5rem; }
+  button { display:block; width:100%; padding:1rem; margin:.75rem 0; font-size:1.05rem;
+           border-radius:.75rem; border:2px solid var(--accent); cursor:pointer;
+           background:var(--accent); color:#fff; font-weight:600; }
+  button.secondary { background:transparent; color:var(--accent); }
+  #result { display:none; background:var(--card); border-radius:1rem; padding:1.5rem 1rem;
+            margin-top:1.5rem; box-shadow:0 2px 10px rgba(0,0,0,.08); }
+  #date { font-size:2.4rem; font-weight:700; margin:.25rem 0 .5rem; color:var(--accent); }
+  .small { font-size:.85rem; color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>The birthday problem</h1>
+
+  <button id="real">Use my real birthday</button>
+  <button id="random" class="secondary">Give me a random birthday</button>
+
+  <div id="result">
+    <div class="small">Your birthday for today is</div>
+    <div id="date"></div>
+    <div class="small">Screenshot this so you remember it!</div>
+    <button id="submit">Continue to the form →</button>
+  </div>
+</main>
+
+<script>
+  // ===== CONFIG (from the form's pre-filled link) =====
+  const FORM_URL     = "https://docs.google.com/forms/d/e/1FAIpQLSf-6GZUZNU4JC4Lp_l07NnEcMvXmBn_hw6jOU4ZGTFCUNbdsg/viewform";
+  const ENTRY_MONTH  = "entry.2042478223";
+  const ENTRY_DAY    = "entry.2055352921";
+  const ENTRY_RANDOM = "entry.147619610";
+  // Option text must match the form exactly
+  const YES = "Yes", NO = "No";
+  // =========================================================================
+
+  const MONTHS = ["January","February","March","April","May","June","July",
+                  "August","September","October","November","December"];
+  const LENGTHS = [31,28,31,30,31,30,31,31,30,31,30,31]; // 365 days, no 29 Feb
+
+  function prefillUrl(params) {
+    const q = new URLSearchParams({ usp: "pp_url", ...params });
+    return FORM_URL + "?" + q.toString();
+  }
+
+  function randomBirthday() {
+    // Uniform over the 365 days of a non-leap year
+    let d = Math.floor(Math.random() * 365);
+    let m = 0;
+    while (d >= LENGTHS[m]) { d -= LENGTHS[m]; m++; }
+    return { month: MONTHS[m], day: d + 1 };
+  }
+
+  let chosen = null;
+
+  document.getElementById("real").onclick = () => {
+    window.location.href = prefillUrl({ [ENTRY_RANDOM]: NO });
+  };
+
+  document.getElementById("random").onclick = () => {
+    chosen = randomBirthday();
+    document.getElementById("date").textContent = `${chosen.day} ${chosen.month}`;
+    document.getElementById("result").style.display = "block";
+    document.getElementById("result").scrollIntoView({ behavior: "smooth" });
+  };
+
+  document.getElementById("submit").onclick = () => {
+    if (!chosen) return;
+    window.location.href = prefillUrl({
+      [ENTRY_MONTH]: chosen.month,
+      [ENTRY_DAY]: String(chosen.day),
+      [ENTRY_RANDOM]: YES
+    });
+  };
+</script>
+</body>
+</html>
